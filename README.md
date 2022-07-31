@@ -64,7 +64,7 @@ gunicorn -w 4 -k uvicorn.workers.UvicornWorker app.main:app --bind 0.0.0.0:8000
 
 ### Converting the API into a Service
 
-- Get environment variable by executing `which gunicorn`
+- Get python path by executing `which gunicorn`
 
 - Go to `/etc/systemd/system`
 
