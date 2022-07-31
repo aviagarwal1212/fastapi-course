@@ -145,6 +145,8 @@ location / {
 
 - Follow the guide to setup the certificate
 
+- Make sure port 443 is open for HTTPS requests
+
 - Test by going to `api.com` and `api.com/docs`; the connection should be encrypted
 
 - Repeat the test for `www.api.com`
