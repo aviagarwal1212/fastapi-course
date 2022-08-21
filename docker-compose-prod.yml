@@ -1,0 +1,21 @@
+version: '3'
+services:
+  api:
+    build: .
+    depends_on:
+      - postgres
+    ports:
+      - 8000:8000
+    command: gunicorn -w 4 -k uvicorn.workers.UvicornWorker app.main:app --bind 0.0.0.0:8000
+    env_file:
+      - /home/ubuntu/.env
+
+  postgres:
+    image: postgres
+    env_file:
+      - /home/ubuntu/.env
+    volumes:
+      - postgres-db:/var/lib/postgresql/data
+
+volumes:
+  postgres-db:
